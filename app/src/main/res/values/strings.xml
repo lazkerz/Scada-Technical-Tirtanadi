@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Scada Technical Tirtanadi</string>
+    <string name="scada..">SCADA Technical Dashboard</string>
+    <string name="welcome">Selamat Datang </string>
+    <string name="silahkan">Silahkan masuk terlebih dahulu</string>
+    <string name="dashboard">SCADA TECHNICAL DISPLAY</string>
+    <string name="ipam">Please select IPAM branch:</string>
 </resources>
