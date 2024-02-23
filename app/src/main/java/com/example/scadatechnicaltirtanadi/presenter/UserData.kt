@@ -79,19 +79,19 @@ class UserData(
                 Log.e("UserData", "Failed to delete token: ${error.message}")
             }
         )
-    }
 
-    fun getTokenfromRealm() {
-        val realm = Realm.getDefaultInstance()
-        val result = realm.where(AccessToken::class.java).findAll()
-        if (result.isNotEmpty()) {
-            val items = AccessToken().apply {
-                Collections.addAll(realm.copyFromRealm(result))
+        fun getTokenfromRealm() {
+            val realm = Realm.getDefaultInstance()
+            val result = realm.where(AccessToken::class.java).findAll()
+            if (result.isNotEmpty()) {
+                val items = AccessToken().apply {
+                    Collections.addAll(realm.copyFromRealm(result))
+                }
+                view.onLogin(ResultState.Success(items))
+            } else {
+                view.onLogin(ResultState.Error("No data in Realm"))
             }
-            view.onLogin(ResultState.Success(items))
-        } else {
-            view.onLogin(ResultState.Error("No data in Realm"))
+            realm.close()
         }
-        realm.close()
     }
 }
