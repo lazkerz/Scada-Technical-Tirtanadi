@@ -6,16 +6,19 @@
     android:layout_height="match_parent"
     android:id="@+id/btn_in_component">
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSignIn"
         android:layout_width="fill_parent"
         android:layout_height="65dp"
         android:layout_marginHorizontal="24dp"
+        android:backgroundTint="@color/blue"
         android:fontFamily="sans-serif"
         android:paddingVertical="12dp"
-        android:backgroundTint="@color/blue"
         android:text="Masuk"
         android:textColor="@color/white"
-        android:textSize="14dp"/>
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
