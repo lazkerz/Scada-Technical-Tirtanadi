@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
     <TextView
-        android:id="@+id/tv_sign_in"
+        android:id="@+id/tv_choose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
@@ -63,6 +63,6 @@
         android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_sign_in" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_choose" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,19 +5,18 @@ import io.realm.RealmObject
 import io.realm.annotations.RealmClass
 import java.io.Serializable
 
-
 @RealmClass
-open class AccessToken: RealmObject(), Serializable{
+open class AccessToken: RealmObject(), Serializable {
 
-	@field:SerializedName("access_token")
-	val accessToken: String? = null
+	@SerializedName("access_token")
+	var accessToken: String? = null
 
-	@field:SerializedName("refresh_token")
-	val refreshToken: String? = null
+	@SerializedName("refresh_token")
+	var refreshToken: String? = null
 
-	@field:SerializedName("token_type")
-	val tokenType: String? = null
+	@SerializedName("token_type")
+	var tokenType: String? = null
 
-	@field:SerializedName("expires_in")
-	val expiresIn: Int = 0
+	@SerializedName("expires_in")
+	var expiresIn: Int = 0
 }
