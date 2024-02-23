@@ -1,11 +1,16 @@
 package com.example.scadatechnicaltirtanadi.presentation
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
+import com.example.apps_magang.utils.LoginManager
 import com.example.apps_magang.utils.RealmManager
 import com.example.apps_magang.utils.ResultState
 import com.example.mateup.view.user_view
+import com.example.scadatechnicaltirtanadi.MainActivity
 import com.example.scadatechnicaltirtanadi.R
 import com.example.scadatechnicaltirtanadi.data.AccessToken
 import com.example.scadatechnicaltirtanadi.presenter.UserData
@@ -29,16 +34,28 @@ class SignInActivity : AppCompatActivity(), user_view {
             this,
         )
 
-        val username =
+        val username = findViewById<TextView>(R.id.etUsername)
+        val password = findViewById<TextView>(R.id.etPassword)
+        val buttonLogin = findViewById<Button>(R.id.btnSignIn)
 
-        presenter.getUser(username: String, password: String)
+        buttonLogin.setOnClickListener {
+            val username = username.text.toString()
+            val password = password.text.toString()
+
+            presenter.getUser(username, password)
+        }
     }
+
 
     override fun onLogin(result: ResultState<AccessToken>) {
         when (result) {
             is ResultState.Success -> {
-                // Handle data berhasil diterima
-                val Token = result.data
+                val accessToken = result.data
+                // Lanjutkan ke MainActivity atau tindakan yang sesuai
+                startActivity(Intent(this, MainActivity::class.java))
+                // Simpan status login
+                LoginManager.saveLogin(this, true)
+                finish()
             }
             is ResultState.Error -> {
                 // Handle jika terjadi error

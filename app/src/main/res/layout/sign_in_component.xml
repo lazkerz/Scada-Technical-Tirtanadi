@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
-        android:labelFor="@id/etName"
+        android:labelFor="@id/etUsername"
         android:text="Username"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="@+id/etNameLayout" />
@@ -28,7 +28,7 @@
         tools:layout_editor_absoluteX="24dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etName"
+            android:id="@+id/etUsername"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/background_fieldtext"
@@ -37,13 +37,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/tvUsername"
+        android:id="@+id/tvPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:fontFamily="sans-serif"
         android:labelFor="@id/etUsername"
-        android:text="Username"
+        android:text="Password"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="@id/etNameLayout"
         app:layout_constraintTop_toBottomOf="@id/etNameLayout" />
@@ -56,10 +56,10 @@
         android:layout_marginHorizontal="24dp"
         app:errorEnabled="true"
         app:hintEnabled="false"
-        app:layout_constraintTop_toBottomOf="@id/tvUsername">
+        app:layout_constraintTop_toBottomOf="@id/tvPassword">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etUsername"
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/background_fieldtext"
