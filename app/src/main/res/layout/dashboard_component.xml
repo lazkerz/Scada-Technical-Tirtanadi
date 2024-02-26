@@ -9,7 +9,7 @@
     android:id="@+id/component_dashboard">
 
     <LinearLayout
-        android:id="@+id/v_delitua"
+        android:id="@+id/delitua"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:background="@drawable/backgroud_layout"
@@ -38,14 +38,14 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/v_sunggal"
+        android:id="@+id/sunggal"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/backgroud_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/v_delitua">
+        app:layout_constraintTop_toBottomOf="@+id/delitua">
 
         <TextView
             android:id="@+id/tv_sunggal"
@@ -69,14 +69,14 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/v_martubung"
+        android:id="@+id/martubung"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/backgroud_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/v_sunggal">
+        app:layout_constraintTop_toBottomOf="@+id/sunggal">
 
         <TextView
             android:id="@+id/tv_martubung"
@@ -100,14 +100,14 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/v_limauManis"
+        android:id="@+id/limauManis"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/backgroud_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/v_martubung">
+        app:layout_constraintTop_toBottomOf="@+id/martubung">
 
         <TextView
             android:id="@+id/tv_limauManis"
@@ -131,14 +131,14 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/v_hamparanPerak"
+        android:id="@+id/hamparanPerak"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/backgroud_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/v_limauManis">
+        app:layout_constraintTop_toBottomOf="@+id/limauManis">
 
         <TextView
             android:id="@+id/tv_hamparanPerak"

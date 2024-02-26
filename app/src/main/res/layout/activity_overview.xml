@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OverviewActivity">
+    tools:context=".presentation.OverviewActivity">
 
     <WebView
-        android:id="@+id/wb_overview"
+        android:id="@+id/overview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:initialScale="150"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="-43dp"
         tools:layout_editor_absoluteY="196dp" />
 
     <ImageView
-        android:id="@+id/iv_back"
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
