@@ -24,17 +24,17 @@
             android:layout_marginStart="20dp"
             android:text="Delitua"
             android:textColor="@color/dark_gray"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/tv_available"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="30dp"
             android:text="available"
             android:textColor="@color/green"
-            android:textSize="18dp" />
+            android:textSize="14dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -55,17 +55,17 @@
             android:layout_marginStart="20dp"
             android:text="Sunggal"
             android:textColor="@color/dark_gray"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/tv_available1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="30dp"
             android:text="available"
             android:textColor="@color/green"
-            android:textSize="18dp" />
+            android:textSize="14dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -86,17 +86,17 @@
             android:layout_marginStart="20dp"
             android:text="Martubung"
             android:textColor="@color/dark_gray"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/tv_available2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="30dp"
             android:text="available"
             android:textColor="@color/green"
-            android:textSize="18dp" />
+            android:textSize="14dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -117,17 +117,17 @@
             android:layout_marginStart="20dp"
             android:text="Limau Manis"
             android:textColor="@color/dark_gray"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/tv_available3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="30dp"
             android:text="available"
             android:textColor="@color/green"
-            android:textSize="18dp" />
+            android:textSize="14dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -148,17 +148,17 @@
             android:layout_marginStart="20dp"
             android:text="Hamparan Perak"
             android:textColor="@color/dark_gray"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/tv_available4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="40dp"
             android:text="In development"
             android:textColor="@color/green"
-            android:textSize="18dp" />
+            android:textSize="14dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
