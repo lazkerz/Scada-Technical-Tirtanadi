@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:id="@+id/component_dashboard">
+
+    <LinearLayout
+        android:id="@+id/v_delitua"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@drawable/backgroud_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tv_delitua"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginStart="20dp"
+            android:text="Delitua"
+            android:textColor="@color/dark_gray"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tv_available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:text="available"
+            android:textColor="@color/green"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/v_sunggal"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/backgroud_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_delitua">
+
+        <TextView
+            android:id="@+id/tv_sunggal"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginStart="20dp"
+            android:text="Sunggal"
+            android:textColor="@color/dark_gray"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tv_available1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:text="available"
+            android:textColor="@color/green"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/v_martubung"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/backgroud_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_sunggal">
+
+        <TextView
+            android:id="@+id/tv_martubung"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginStart="20dp"
+            android:text="Martubung"
+            android:textColor="@color/dark_gray"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tv_available2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:text="available"
+            android:textColor="@color/green"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/v_limauManis"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/backgroud_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_martubung">
+
+        <TextView
+            android:id="@+id/tv_limauManis"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginStart="20dp"
+            android:text="Limau Manis"
+            android:textColor="@color/dark_gray"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tv_available3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:text="available"
+            android:textColor="@color/green"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/v_hamparanPerak"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/backgroud_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_limauManis">
+
+        <TextView
+            android:id="@+id/tv_hamparanPerak"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginStart="20dp"
+            android:text="Hamparan Perak"
+            android:textColor="@color/dark_gray"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tv_available4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:text="In development"
+            android:textColor="@color/green"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

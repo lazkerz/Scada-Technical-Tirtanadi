@@ -31,7 +31,7 @@
             android:id="@+id/etUsername"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_fieldtext"
+            android:background="@drawable/backgroud_layout"
             android:textColor="@color/black"
             tools:ignore="VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -42,14 +42,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:fontFamily="sans-serif"
-        android:labelFor="@id/etUsername"
+        android:labelFor="@id/etPassword"
         android:text="Password"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="@id/etNameLayout"
         app:layout_constraintTop_toBottomOf="@id/etNameLayout" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etUsernameLayout"
+        android:id="@+id/etPasswordLayout"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,7 +62,8 @@
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_fieldtext"
+            android:password="true"
+            android:background="@drawable/backgroud_layout"
             android:textColor="@color/black"
             tools:ignore="VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>

@@ -5,4 +5,6 @@
     <string name="silahkan">Silahkan masuk terlebih dahulu</string>
     <string name="dashboard">SCADA TECHNICAL DISPLAY</string>
     <string name="ipam">Please select IPAM branch:</string>
+    <string name="dashboard_title">SCADA TECHNICAL DISPLAY</string>
+    <string name="choose">Please select IPAM branch:</string>
 </resources>
