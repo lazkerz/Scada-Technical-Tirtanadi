@@ -68,6 +68,14 @@ class UserData(
         return accessToken
     }
 
+    fun getRefreshToken(): String? {
+        val realm = Realm.getDefaultInstance()
+        val token = realm.where(AccessToken::class.java).findFirst()
+        val accessToken = token?.refreshToken
+        realm.close()
+        return accessToken
+    }
+
     fun deleteToken() {
         val realm = Realm.getDefaultInstance()
         realm.executeTransaction { backgroundRealm ->
