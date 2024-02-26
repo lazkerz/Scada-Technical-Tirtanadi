@@ -3,6 +3,7 @@ package com.example.scadatechnicaltirtanadi.presentation
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -15,6 +16,7 @@ import com.example.scadatechnicaltirtanadi.R
 import com.example.scadatechnicaltirtanadi.data.AccessToken
 import com.example.scadatechnicaltirtanadi.presenter.UserData
 import com.example.scadatechnicaltirtanadi.remote.ApiConfig
+import com.example.scadatechnicaltirtanadi.remote.AuthApi
 import io.realm.Realm
 
 class SignInActivity : AppCompatActivity(), user_view {
@@ -27,12 +29,17 @@ class SignInActivity : AppCompatActivity(), user_view {
         Realm.init(this)
         RealmManager.initRealm()
 
-        val apiService = ApiConfig.getToken(this)
-
-        presenter = UserData(
-            apiService,
-            this,
-        )
+        val apiService= ApiConfig.getApiService(this, "token") as? AuthApi
+        if (apiService != null) {
+            presenter = UserData(
+                apiService,
+                this,
+            )
+        } else {
+            Log.e("SignIn", "Failed to initialize ApiService")
+            Toast.makeText(this, "Failed to initialize ApiService", Toast.LENGTH_SHORT)
+                .show()
+        }
 
         val username = findViewById<TextView>(R.id.etUsername)
         val password = findViewById<TextView>(R.id.etPassword)

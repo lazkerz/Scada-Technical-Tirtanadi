@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(), user_view{
             presenter.deleteToken()
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
-            finish() // Optional: Menutup aktivitas saat ini setelah logout
+            finish()
         }
 
     }

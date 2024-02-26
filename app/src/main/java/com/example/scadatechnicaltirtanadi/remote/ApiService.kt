@@ -4,8 +4,6 @@ import com.example.scadatechnicaltirtanadi.data.AccessToken
 import com.google.gson.annotations.SerializedName
 import retrofit2.Call
 import retrofit2.http.Body
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.POST
@@ -24,3 +22,13 @@ data class SignInRequest(
         @SerializedName("client_secret") val clientSecret: String,
         @SerializedName("client_id") val clientId: String
 )
+
+interface Overview {
+        @Headers("Accept: application/hal+json")
+        @GET("api/v1//ipam-hourly")
+        fun getOverview(
+                @Query("branch_slug") branch_slug: String,
+                @Query("hour") hour: String,
+                @Query("date") date: String,
+        ): Call<AccessToken>
+}
