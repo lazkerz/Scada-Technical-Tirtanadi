@@ -16,6 +16,9 @@
         android:theme="@style/Theme.ScadaTechnicalTirtanadi"
         tools:targetApi="31">
         <activity
+            android:name=".OverviewActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.SignInActivity"
             android:exported="true">
             <intent-filter>
@@ -26,8 +29,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>
