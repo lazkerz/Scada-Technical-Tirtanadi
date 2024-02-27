@@ -18,7 +18,7 @@
 
         <TextView
             android:id="@+id/tv_delitua"
-            android:layout_width="240dp"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
             android:layout_marginStart="20dp"
@@ -49,7 +49,7 @@
 
         <TextView
             android:id="@+id/tv_sunggal"
-            android:layout_width="240dp"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
             android:layout_marginStart="20dp"
@@ -80,7 +80,7 @@
 
         <TextView
             android:id="@+id/tv_martubung"
-            android:layout_width="240dp"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
             android:layout_marginStart="20dp"
@@ -111,7 +111,7 @@
 
         <TextView
             android:id="@+id/tv_limauManis"
-            android:layout_width="240dp"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
             android:layout_marginStart="20dp"
@@ -142,7 +142,7 @@
 
         <TextView
             android:id="@+id/tv_hamparanPerak"
-            android:layout_width="190dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
             android:layout_marginStart="20dp"
