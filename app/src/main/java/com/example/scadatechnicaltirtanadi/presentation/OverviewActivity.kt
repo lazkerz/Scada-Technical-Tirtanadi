@@ -43,7 +43,6 @@ class OverviewActivity : AppCompatActivity(), user_view {
 
         back.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
             finish()
         }
