@@ -1,9 +1,11 @@
 package com.example.scadatechnicaltirtanadi.presentation
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -59,13 +61,16 @@ class OverviewActivity : AppCompatActivity(), user_view {
         webView.webViewClient = WebViewClient()
         webView.loadUrl("https://scada-technical.tirtanadi.ibmsindo.net/${branchSlug}/overview", headers)
 
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+
         val webSettings = webView.settings
         webSettings.javaScriptEnabled = true
         webSettings.domStorageEnabled = true
         webSettings.setSupportZoom(true) // Aktifkan kontrol zoom
         webSettings.builtInZoomControls = true // Aktifkan kontrol zoom bawaan WebView
         webSettings.displayZoomControls = false
-        
+        webSettings.useWideViewPort = true
+        webSettings.loadWithOverviewMode = true
     }
 
     override fun onLogin(result: ResultState<AccessToken>) {
