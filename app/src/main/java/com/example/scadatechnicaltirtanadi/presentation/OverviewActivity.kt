@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.webkit.WebResourceRequest
+import android.webkit.WebResourceResponse
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -50,11 +52,12 @@ class OverviewActivity : AppCompatActivity(), user_view {
             finish()
         }
 
-
         val accessToken = presenter.getAccessToken()
         val branchSlug = intent.getStringExtra("branch_slug") ?: ""
 
-        webView.webViewClient = WebViewClient()
+        val customWebViewClient = CustomWebViewClient("${accessToken}")
+        webView.webViewClient = customWebViewClient // Menggunakan CustomWebViewClient
+
         webView.loadUrl("https://scada-technical.tirtanadi.ibmsindo.net/${branchSlug}/overview")
 
         val webSettings = webView.settings
@@ -63,42 +66,54 @@ class OverviewActivity : AppCompatActivity(), user_view {
         webSettings.setSupportZoom(true) // Aktifkan kontrol zoom
         webSettings.builtInZoomControls = true // Aktifkan kontrol zoom bawaan WebView
         webSettings.displayZoomControls = false
-   
-
-
-
-//        val url = "https://scada-technical.tirtanadi.ibmsindo.net/${branchSlug}/overview"
-//
-//        val webViewClient = object : WebViewClient() {
-//            override fun shouldOverrideUrlLoading(view: WebView?, url: String): Boolean {
-//                // Tambahkan header permintaan HTTP
-//                val connection = URL(url).openConnection() as HttpURLConnection
-////                connection.setRequestProperty("Authorization: ", "Bearer $accessToken")
-//                try {
-//                    connection.connect()
-//                    view?.loadUrl(url)
-//                } catch (e: IOException) {
-//                    // Tangani kesalahan
-//                    e.printStackTrace()
-//                } finally {
-//                    connection.disconnect()
-//                }
-//                return true
-//            }
-//        }
-//
-//        webView.settings.apply {
-//            javaScriptEnabled = true
-//            setSupportZoom(false)
-//            builtInZoomControls = false
-//            displayZoomControls = false
-//            loadWithOverviewMode = true
-//            cacheMode = WebSettings.LOAD_DEFAULT
-//        }
-//
-//        webView.webViewClient = webViewClient
-//        webView.loadUrl(url)
     }
+
+    class CustomWebViewClient(private val accessToken: String) : WebViewClient() {
+
+        override fun shouldInterceptRequest(
+            view: WebView?,
+            request: WebResourceRequest?
+        ): WebResourceResponse? {
+            // Periksa jika request tidak null dan URL request tidak null
+            if (request != null && request.url != null) {
+                // Ambil URL request
+                val url = request.url.toString()
+
+                // Periksa jika URL adalah URL yang ingin Anda tambahkan header access token
+                if (url.contains("https://scada-technical.tirtanadi.ibmsindo.net")) {
+                    val conn = URL(url).openConnection() as HttpURLConnection
+
+                    // Tambahkan header access token ke permintaan
+                    if (!accessToken.isNullOrEmpty()) {
+                        conn.setRequestProperty("Authorization", "Bearer $accessToken")
+                    }
+
+                    // Baca respons dari server
+                    try {
+                        conn.connect()
+                        val contentType = conn.contentType
+                        val contentEncoding = conn.contentEncoding
+
+                        // Buat dan kembalikan WebResourceResponse dengan data yang dibaca
+                        return conn.inputStream.use { inputStream ->
+                            WebResourceResponse(
+                                contentType,
+                                contentEncoding,
+                                inputStream
+                            )
+                        }
+                    } catch (e: IOException) {
+                        e.printStackTrace()
+                    } finally {
+                        conn.disconnect()
+                    }
+                }
+            }
+            // Biarkan WebView menangani permintaan jika tidak memerlukan manipulasi header access token
+            return super.shouldInterceptRequest(view, request)
+        }
+    }
+
 
     override fun onLogin(result: ResultState<AccessToken>) {
         when (result) {
