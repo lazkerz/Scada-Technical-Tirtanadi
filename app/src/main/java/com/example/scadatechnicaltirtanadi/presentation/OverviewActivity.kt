@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.ImageView
@@ -15,10 +14,6 @@ import com.example.scadatechnicaltirtanadi.R
 import com.example.scadatechnicaltirtanadi.data.AccessToken
 import com.example.scadatechnicaltirtanadi.presenter.UserData
 import com.example.scadatechnicaltirtanadi.remote.ApiConfig
-import java.io.ByteArrayInputStream
-import java.io.IOException
-import java.net.HttpURLConnection
-import java.net.URL
 
 class OverviewActivity : AppCompatActivity(), user_view {
 
@@ -66,7 +61,7 @@ class OverviewActivity : AppCompatActivity(), user_view {
         webSettings.setSupportZoom(true) // Aktifkan kontrol zoom
         webSettings.builtInZoomControls = true // Aktifkan kontrol zoom bawaan WebView
         webSettings.displayZoomControls = false
-        
+
     }
 
     override fun onLogin(result: ResultState<AccessToken>) {

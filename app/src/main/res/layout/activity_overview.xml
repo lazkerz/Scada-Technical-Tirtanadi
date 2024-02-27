@@ -10,10 +10,10 @@
         android:id="@+id/overview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:rotation="90"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="-43dp"
-        tools:layout_editor_absoluteY="196dp" />
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 
     <ImageView
         android:id="@+id/back"
