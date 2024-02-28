@@ -18,23 +18,25 @@
 
         <TextView
             android:id="@+id/tv_delitua"
-            android:layout_width="240dp"
+            android:layout_weight="3"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="right|center_vertical"
+            android:layout_gravity="start|center_vertical"
             android:layout_marginStart="20dp"
             android:text="Delitua"
             android:textColor="@color/dark_gray"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/tv_available"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="20dp"
             android:text="available"
             android:textColor="@color/green"
-            android:textSize="18dp" />
+            android:textSize="14dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -49,23 +51,25 @@
 
         <TextView
             android:id="@+id/tv_sunggal"
-            android:layout_width="240dp"
+            android:layout_weight="3"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="right|center_vertical"
+            android:layout_gravity="start|center_vertical"
             android:layout_marginStart="20dp"
             android:text="Sunggal"
             android:textColor="@color/dark_gray"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/tv_available1"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="20dp"
             android:text="available"
             android:textColor="@color/green"
-            android:textSize="18dp" />
+            android:textSize="14dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -80,23 +84,25 @@
 
         <TextView
             android:id="@+id/tv_martubung"
-            android:layout_width="240dp"
+            android:layout_weight="3"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="right|center_vertical"
+            android:layout_gravity="start|center_vertical"
             android:layout_marginStart="20dp"
             android:text="Martubung"
             android:textColor="@color/dark_gray"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/tv_available2"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="20dp"
             android:text="available"
             android:textColor="@color/green"
-            android:textSize="18dp" />
+            android:textSize="14dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -111,23 +117,25 @@
 
         <TextView
             android:id="@+id/tv_limauManis"
-            android:layout_width="240dp"
+            android:layout_weight="3"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="right|center_vertical"
+            android:layout_gravity="start|center_vertical"
             android:layout_marginStart="20dp"
             android:text="Limau Manis"
             android:textColor="@color/dark_gray"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/tv_available3"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="20dp"
             android:text="available"
             android:textColor="@color/green"
-            android:textSize="18dp" />
+            android:textSize="14dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -142,23 +150,25 @@
 
         <TextView
             android:id="@+id/tv_hamparanPerak"
-            android:layout_width="190dp"
+            android:layout_weight="3"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="right|center_vertical"
+            android:layout_gravity="start|center_vertical"
             android:layout_marginStart="20dp"
             android:text="Hamparan Perak"
             android:textColor="@color/dark_gray"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/tv_available4"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="20dp"
             android:text="In development"
             android:textColor="@color/green"
-            android:textSize="18dp" />
+            android:textSize="14dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
