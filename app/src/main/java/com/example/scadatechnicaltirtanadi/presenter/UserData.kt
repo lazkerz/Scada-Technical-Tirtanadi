@@ -2,6 +2,7 @@ package com.example.scadatechnicaltirtanadi.presenter
 
 import android.content.Context
 import android.util.Log
+import com.example.apps_magang.utils.LoginManager
 import com.example.apps_magang.utils.ResultState
 import com.example.mateup.view.user_view
 import com.example.scadatechnicaltirtanadi.data.AccessToken
@@ -17,6 +18,7 @@ import java.util.Collections
 class UserData(
     private val authApi: AuthApi,
     private val view: user_view,
+    private val context: Context
 ) {
     fun getUser(
         username: String, password: String
@@ -68,13 +70,13 @@ class UserData(
         return accessToken
     }
 
-    fun getRefreshToken(): String? {
-        val realm = Realm.getDefaultInstance()
-        val token = realm.where(AccessToken::class.java).findFirst()
-        val accessToken = token?.refreshToken
-        realm.close()
-        return accessToken
-    }
+//    fun getRefreshToken(): String? {
+//        val realm = Realm.getDefaultInstance()
+//        val token = realm.where(AccessToken::class.java).findFirst()
+//        val accessToken = token?.refreshToken
+//        realm.close()
+//        return accessToken
+//    }
 
     fun deleteToken() {
         val realm = Realm.getDefaultInstance()
@@ -82,19 +84,7 @@ class UserData(
             backgroundRealm.where(AccessToken::class.java).findAll().deleteAllFromRealm()
         }
         realm.close()
+        LoginManager.saveLogin(context, false)
     }
 
-//    fun getTokenfromRealm() {
-//        val realm = Realm.getDefaultInstance()
-//        val result = realm.where(AccessToken::class.java).findAll()
-//        if (result.isNotEmpty()) {
-//            val items = AccessToken().apply {
-//                Collections.addAll(realm.copyFromRealm(result))
-//            }
-//            view.onLogin(ResultState.Success(items))
-//        } else {
-//            view.onLogin(ResultState.Error("No data in Realm"))
-//        }
-//        realm.close()
-//    }
 }

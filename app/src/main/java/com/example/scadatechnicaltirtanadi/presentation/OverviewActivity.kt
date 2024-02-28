@@ -33,6 +33,7 @@ class OverviewActivity : AppCompatActivity(), user_view {
             presenter = UserData(
                 apiService,
                 this,
+                this
             )
         } else {
             Log.e("SignIn", "Failed to initialize ApiService")
@@ -55,29 +56,13 @@ class OverviewActivity : AppCompatActivity(), user_view {
         val headers = HashMap<String, String>()
         headers["Authorization"] = "Bearer $accessToken"
 
-        // Konfigurasi WebView
-        val webSettings = webView.settings
-        webSettings.javaScriptEnabled = true
-        webSettings.domStorageEnabled = true
-        webSettings.setSupportZoom(true) // Aktifkan kontrol zoom
-        webSettings.builtInZoomControls = true // Aktifkan kontrol zoom bawaan WebView
-        webSettings.displayZoomControls = false
-        webSettings.useWideViewPort = true
-        webSettings.loadWithOverviewMode = true
-
-        // Tetapkan WebViewClient untuk menangani peristiwa muat
         webView.webViewClient = object : WebViewClient() {
-            override fun onPageStarted(view: WebView?, url: String?, favicon: android.graphics.Bitmap?) {
-                super.onPageStarted(view, url, favicon)
-                // Tampilkan tampilan loading saat memulai muatan halaman
-                setLoading(true)
-            }
-
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
+                // Set visibilitas WebView ke VISIBLE setelah konten selesai dimuat
+                webView.visibility = View.VISIBLE
                 // Sembunyikan tampilan loading setelah halaman selesai dimuat
                 setLoading(false)
-
                 // Periksa apakah halaman berhasil dimuat
                 if (!view?.title.isNullOrEmpty() && view?.title?.toLowerCase() == "untitled") {
                     // Halaman tidak berhasil dimuat, tampilkan dialog untuk memuat ulang
@@ -86,10 +71,22 @@ class OverviewActivity : AppCompatActivity(), user_view {
             }
         }
 
+        // Set visibilitas WebView ke GONE pada awalnya
+        webView.visibility = View.GONE
+
         // Load URL ke WebView
         webView.loadUrl("https://scada-technical.tirtanadi.ibmsindo.net/${branchSlug}/overview", headers)
 
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+
+        val webSettings = webView.settings
+        webSettings.javaScriptEnabled = true
+        webSettings.domStorageEnabled = true
+        webSettings.setSupportZoom(true) // Aktifkan kontrol zoom
+        webSettings.builtInZoomControls = true // Aktifkan kontrol zoom bawaan WebView
+        webSettings.displayZoomControls = false
+        webSettings.useWideViewPort = true
+        webSettings.loadWithOverviewMode = true
     }
 
     private fun showReloadDialog() {
