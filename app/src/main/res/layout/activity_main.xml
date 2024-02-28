@@ -18,7 +18,7 @@
             android:paddingVertical="15dp"
             android:layout_height="?attr/actionBarSize"
             android:backgroundTint="@color/blue"
-            app:logo="@drawable/tirtandi_logo_name" />
+            app:logo="@drawable/tirtandi_logo_name"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
