@@ -56,6 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
+        app:endIconMode="password_toggle"
         app:errorEnabled="true"
         app:hintEnabled="false"
         app:layout_constraintTop_toBottomOf="@id/tvPassword">
@@ -64,7 +65,7 @@
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:password="true"
+            android:inputType="textPassword"
             android:background="@drawable/backgroud_layout"
             android:textColor="@color/black"
             tools:ignore="VisualLintTextFieldSize" />

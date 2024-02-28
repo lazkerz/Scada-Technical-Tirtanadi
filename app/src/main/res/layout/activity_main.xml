@@ -15,9 +15,10 @@
         <com.google.android.material.appbar.MaterialToolbar
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
+            android:paddingVertical="15dp"
             android:layout_height="?attr/actionBarSize"
             android:backgroundTint="@color/blue"
-            app:logo="@drawable/tirtanadi" />
+            app:logo="@drawable/tirtandi_logo_name" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

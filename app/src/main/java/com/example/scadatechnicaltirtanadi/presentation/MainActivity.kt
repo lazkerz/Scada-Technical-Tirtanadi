@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity(), user_view{
             presenter = UserData(
                 apiService,
                 this,
+                this
             )
         } else {
             Log.e("SignIn", "Failed to initialize ApiService")
@@ -69,6 +70,7 @@ class MainActivity : AppCompatActivity(), user_view{
 
         logout.setOnClickListener {
             presenter.deleteToken()
+
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
             finish()
