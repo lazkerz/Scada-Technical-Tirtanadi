@@ -4,4 +4,8 @@
         <!-- Customize your dark theme here. -->
         <item name="colorPrimary">@color/blue</item>
     </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
 </resources>

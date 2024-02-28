@@ -19,21 +19,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ScadaTechnicalTirtanadi"
         tools:targetApi="31" >
+
         <activity
-            android:name=".presentation.SplashcreenActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.OverviewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.SignInActivity"
-            android:exported="true" >
+            android:name=".presentation.SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".presentation.OverviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.SignInActivity"
+            android:exported="false"/>
         <activity
             android:name=".presentation.MainActivity"
             android:exported="false" />
