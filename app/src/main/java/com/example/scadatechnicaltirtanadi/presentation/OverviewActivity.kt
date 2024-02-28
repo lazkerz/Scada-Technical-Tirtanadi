@@ -22,6 +22,7 @@ import com.example.scadatechnicaltirtanadi.remote.ApiConfig
 class OverviewActivity : AppCompatActivity(), user_view {
 
     private lateinit var presenter: UserData
+    private lateinit var webView: WebView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +40,7 @@ class OverviewActivity : AppCompatActivity(), user_view {
                 .show()
         }
 
-        val webView: WebView = findViewById(R.id.overview)
+        webView = findViewById(R.id.overview)
         val back = findViewById<ImageView>(R.id.back)
 
         back.setOnClickListener {
@@ -54,11 +55,7 @@ class OverviewActivity : AppCompatActivity(), user_view {
         val headers = HashMap<String, String>()
         headers["Authorization"] = "Bearer $accessToken"
 
-//        webView.webViewClient = WebViewClient()
-        webView.loadUrl("https://scada-technical.tirtanadi.ibmsindo.net/${branchSlug}/overview", headers)
-
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
-
+        // Konfigurasi WebView
         val webSettings = webView.settings
         webSettings.javaScriptEnabled = true
         webSettings.domStorageEnabled = true
@@ -68,7 +65,14 @@ class OverviewActivity : AppCompatActivity(), user_view {
         webSettings.useWideViewPort = true
         webSettings.loadWithOverviewMode = true
 
+        // Tetapkan WebViewClient untuk menangani peristiwa muat
         webView.webViewClient = object : WebViewClient() {
+            override fun onPageStarted(view: WebView?, url: String?, favicon: android.graphics.Bitmap?) {
+                super.onPageStarted(view, url, favicon)
+                // Tampilkan tampilan loading saat memulai muatan halaman
+                setLoading(true)
+            }
+
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
                 // Sembunyikan tampilan loading setelah halaman selesai dimuat
@@ -82,10 +86,13 @@ class OverviewActivity : AppCompatActivity(), user_view {
             }
         }
 
+        // Load URL ke WebView
+        webView.loadUrl("https://scada-technical.tirtanadi.ibmsindo.net/${branchSlug}/overview", headers)
+
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
     }
 
     private fun showReloadDialog() {
-        val webView = findViewById<WebView>(R.id.overview)
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Konten tidak dapat dimuat")
         builder.setMessage("Apakah Anda ingin memuat ulang konten?")
@@ -101,10 +108,8 @@ class OverviewActivity : AppCompatActivity(), user_view {
         dialog.show()
     }
 
-
     private fun setLoading(isLoading: Boolean) {
         val viewLoading = findViewById<RelativeLayout>(R.id.view_loading)
-        val webView = findViewById<WebView>(R.id.overview)
 
         if (isLoading) {
             // Tampilkan tampilan loading
